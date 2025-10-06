@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Home page with no auth", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://practicesoftwaretesting.com/");
+    await page.goto(process.env.URL!);
   });
 
   test("visual test", async ({ page }) => {
@@ -44,7 +44,7 @@ test.describe("Home page with no auth", () => {
 test.describe("Home page customer 01 auth", () => {
   test.use({ storageState: ".auth/customer-01.json" });
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://practicesoftwaretesting.com/");
+    await page.goto(process.env.URL!);
   });
 
   test("visual test authorized", async ({ page }) => {
